@@ -1,0 +1,1076 @@
+{
+ "store": {
+  "name": "Glowin",
+  "tagline": "Visioncare · Lentes con protección azul y UV",
+  "logo": "assets/logo-header.webp",
+  "announcement": "Envíos a todo Honduras 🇭🇳",
+  "currency": "HNL",
+  "locale": "es-HN",
+  "whatsapp": "+50432857535",
+  "email": "",
+  "instagram": "Glowinhn",
+  "shippingCost": 70,
+  "freeShippingOver": 0,
+  "checkoutNote": "Después de agendar, escríbenos por WhatsApp con tu número de pedido para confirmar y pagar.",
+  "shippingOptions": [
+   {
+    "name": "Envío en Tegucigalpa",
+    "note": "",
+    "price": 70,
+    "address": true
+   },
+   {
+    "name": "Envío nacional",
+    "note": "A todo Honduras",
+    "price": 90,
+    "address": true
+   }
+  ],
+  "paymentOptions": [
+   {
+    "name": "Efectivo al recibir",
+    "note": "Pagas al momento de la entrega",
+    "ships": [
+     "Envío en Tegucigalpa"
+    ]
+   },
+   {
+    "name": "Depósito o transferencia bancaria",
+    "note": "Te enviamos los datos de la cuenta por WhatsApp",
+    "ships": [
+     "Envío en Tegucigalpa",
+     "Envío nacional"
+    ]
+   },
+   {
+    "name": "Tarjeta de crédito o débito",
+    "note": "Te enviamos un link de pago seguro de TENGO por WhatsApp",
+    "ships": [
+     "Envío en Tegucigalpa",
+     "Envío nacional"
+    ]
+   }
+  ],
+  "orderKey": "6a899ae4-f8f1-43cf-9025-269f6c51939c",
+  "orderButton": "Agendar pedido",
+  "orderPrefix": "GLW-",
+  "orderStart": 10000,
+  "orderCounter": "glowinhn-tienda",
+  "promo": {
+   "enabled": true,
+   "percent": 20,
+   "label": "Primera compra en línea",
+   "firstOrderOnly": true
+  }
+ },
+ "theme": {
+  "primary": "#8a5a3b",
+  "secondary": "#4a2c17",
+  "accent": "#7fb8a4",
+  "background": "#f6f1ec",
+  "surface": "#ffffff",
+  "text": "#3d2b1f",
+  "font": "Montserrat",
+  "headingFont": "Cormorant Garamond",
+  "radius": 12
+ },
+ "hero": {
+  "autoplay": 5,
+  "slides": [
+   {
+    "layout": "promo",
+    "image": "assets/slides/portada.webp",
+    "window": "✦ visioncare",
+    "kicker": "Glowin",
+    "title": "20%",
+    "subtitle": "de descuento\nen tu primera compra en línea",
+    "cta": "Ver catálogo",
+    "link": "#/colecciones",
+    "note": ""
+   },
+   {
+    "layout": "clean",
+    "image": "assets/logo-full.webp",
+    "ratio": "1 / 1",
+    "title": "Lentes de protección azul",
+    "subtitle": "Cuida tus ojos de las pantallas",
+    "cta": "Ver lentes",
+    "link": "#/coleccion/luz-azul"
+   },
+   {
+    "layout": "clean",
+    "image": "assets/slides/chica-lentes.webp",
+    "ratio": "4 / 5",
+    "dark": true,
+    "title": "Encuentra tus próximos aros favoritos",
+    "subtitle": "Envío Tegucigalpa L 70 · Nacional L 90",
+    "cta": "Ver todo",
+    "link": "#/todo"
+   }
+  ]
+ },
+ "home": {
+  "showCollections": true,
+  "collectionsUntil": "",
+  "sections": [
+   {
+    "type": "new",
+    "title": "Lo nuevo ✦",
+    "collection": "",
+    "visible": true
+   },
+   {
+    "type": "sale",
+    "title": "Ofertas",
+    "collection": "",
+    "visible": true
+   }
+  ],
+  "allBanner": {
+   "visible": true,
+   "image": "assets/slides/chica-lentes.webp",
+   "text": "Click para ver más lentes",
+   "link": "#/todo"
+  }
+ },
+ "collections": [
+  {
+   "id": "luz-azul",
+   "name": "Protección luz azul y UV",
+   "description": "Para pantallas, estudio y trabajo.",
+   "image": "assets/products/luz-azul-01.webp",
+   "visible": true,
+   "keywords": [
+    "luz azul",
+    "uv",
+    "proteccion"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "fotocromaticos",
+   "name": "Fotocromáticos",
+   "description": "Se oscurecen solos con el sol.",
+   "image": "assets/products/fotocromatico-01.webp",
+   "visible": true,
+   "keywords": [
+    "fotocromatico",
+    "fotocromaticos"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lentes-de-sol",
+   "name": "Lentes de sol",
+   "description": "Estilo y protección UV.",
+   "image": "assets/products/lentes-de-sol-01.webp",
+   "visible": true,
+   "keywords": [
+    "sol"
+   ],
+   "exclude": []
+  }
+ ],
+ "products": [
+  {
+   "id": "luz-azul-01",
+   "name": "Luz azul · Transparentes (M01)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Transparentes",
+   "price": 490,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-01.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "transparentes"
+   ]
+  },
+  {
+   "id": "luz-azul-02",
+   "name": "Luz azul · Rosa (M02)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Rosa",
+   "price": 490,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-02.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "rosa"
+   ]
+  },
+  {
+   "id": "luz-azul-03",
+   "name": "Luz azul · Verde (M03)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Verde",
+   "price": 490,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-03.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "verde"
+   ]
+  },
+  {
+   "id": "luz-azul-04",
+   "name": "Luz azul · Transparentes (M04)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Transparentes",
+   "price": 490,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-04.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "transparentes"
+   ]
+  },
+  {
+   "id": "luz-azul-05",
+   "name": "Luz azul · Transparentes (M05)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Transparentes",
+   "price": 410,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-05.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "transparentes"
+   ]
+  },
+  {
+   "id": "luz-azul-06",
+   "name": "Luz azul · Dorado (M06)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Dorado",
+   "price": 580,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-06.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "dorado"
+   ]
+  },
+  {
+   "id": "luz-azul-07",
+   "name": "Luz azul · Azul (M07)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Azul",
+   "price": 490,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-07.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "azul"
+   ]
+  },
+  {
+   "id": "luz-azul-08",
+   "name": "Luz azul · Rosa (M08)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Rosa",
+   "price": 410,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-08.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "rosa"
+   ]
+  },
+  {
+   "id": "luz-azul-09",
+   "name": "Luz azul · Plateado (M09)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Plateado",
+   "price": 350,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-09.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "plateado"
+   ]
+  },
+  {
+   "id": "luz-azul-10",
+   "name": "Luz azul · Transparentes (M10)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Transparentes",
+   "price": 410,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-10.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "transparentes"
+   ]
+  },
+  {
+   "id": "luz-azul-11",
+   "name": "Luz azul · Negro (M11)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Negro",
+   "price": 510,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-11.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "negro"
+   ]
+  },
+  {
+   "id": "luz-azul-12",
+   "name": "Luz azul · Rose gold (M12)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Rose gold",
+   "price": 550,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-12.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "rose gold"
+   ]
+  },
+  {
+   "id": "luz-azul-13",
+   "name": "Luz azul · Two tone (M13)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Two tone",
+   "price": 460,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-13.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "two tone"
+   ]
+  },
+  {
+   "id": "luz-azul-14",
+   "name": "Luz azul · Negro (M14)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Negro",
+   "price": 350,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-14.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "negro"
+   ]
+  },
+  {
+   "id": "luz-azul-15",
+   "name": "Luz azul · Dorado (M15)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Dorado",
+   "price": 470,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-15.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "dorado"
+   ]
+  },
+  {
+   "id": "luz-azul-16",
+   "name": "Luz azul · Transparentes (M16)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Transparentes",
+   "price": 510,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-16.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "transparentes"
+   ]
+  },
+  {
+   "id": "luz-azul-17",
+   "name": "Luz azul · Rosa (M17)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Rosa",
+   "price": 490,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-17.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "rosa"
+   ]
+  },
+  {
+   "id": "luz-azul-18",
+   "name": "Luz azul · Verde (M18)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Verde",
+   "price": 460,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-18.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "verde"
+   ]
+  },
+  {
+   "id": "luz-azul-19",
+   "name": "Luz azul · Transparentes (M19)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Transparentes",
+   "price": 510,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-19.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "transparentes"
+   ]
+  },
+  {
+   "id": "luz-azul-20",
+   "name": "Luz azul · Negro (M20)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Negro",
+   "price": 370,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-20.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "negro"
+   ]
+  },
+  {
+   "id": "luz-azul-21",
+   "name": "Luz azul · Transparentes (M21)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Transparentes",
+   "price": 440,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-21.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "transparentes"
+   ]
+  },
+  {
+   "id": "luz-azul-22",
+   "name": "Luz azul · Café (M22)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Café",
+   "price": 420,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-22.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "café"
+   ]
+  },
+  {
+   "id": "luz-azul-23",
+   "name": "Luz azul · Negro (M23)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Negro",
+   "price": 480,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-23.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "negro"
+   ]
+  },
+  {
+   "id": "luz-azul-24",
+   "name": "Luz azul · Animal print (M24)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Animal print",
+   "price": 380,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-24.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "animal print"
+   ]
+  },
+  {
+   "id": "luz-azul-25",
+   "name": "Luz azul · Negros (M25)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Negros",
+   "price": 550,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-25.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "negros"
+   ]
+  },
+  {
+   "id": "luz-azul-26",
+   "name": "Luz azul · Negro (M26)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Negro",
+   "price": 480,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-26.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "negro"
+   ]
+  },
+  {
+   "id": "luz-azul-27",
+   "name": "Luz azul · Negro (M27)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Negro",
+   "price": 560,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-27.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "negro"
+   ]
+  },
+  {
+   "id": "luz-azul-28",
+   "name": "Luz azul · Negros (M28)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Negros",
+   "price": 550,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-28.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "negros"
+   ]
+  },
+  {
+   "id": "luz-azul-29",
+   "name": "Luz azul · Negro (M29)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Negro",
+   "price": 480,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-29.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "negro"
+   ]
+  },
+  {
+   "id": "luz-azul-30",
+   "name": "Luz azul · Plateado (M30)",
+   "description": "Protegen tus ojos de la luz azul de pantallas y de los rayos UV. Ayudan a reducir el cansancio visual y mejoran tu descanso.\n\nColor: Plateado",
+   "price": 560,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/luz-azul-30.webp"
+   ],
+   "collections": [
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "plateado"
+   ]
+  },
+  {
+   "id": "fotocromatico-01",
+   "name": "Fotocromáticos · Transparentes (F01)",
+   "description": "Se oscurecen solos con el sol y vuelven a ser claros en interiores. Con protección de luz azul y UV.\n\nColor: Transparentes",
+   "price": 540,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/fotocromatico-01.webp"
+   ],
+   "collections": [
+    "fotocromaticos",
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "transparentes"
+   ]
+  },
+  {
+   "id": "fotocromatico-02",
+   "name": "Fotocromáticos · Rosa (F02)",
+   "description": "Se oscurecen solos con el sol y vuelven a ser claros en interiores. Con protección de luz azul y UV.\n\nColor: Rosa",
+   "price": 490,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/fotocromatico-02.webp"
+   ],
+   "collections": [
+    "fotocromaticos",
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "rosa"
+   ]
+  },
+  {
+   "id": "fotocromatico-03",
+   "name": "Fotocromáticos · Negro/Plateado (F03)",
+   "description": "Se oscurecen solos con el sol y vuelven a ser claros en interiores. Con protección de luz azul y UV.\n\nColor: Negro/Plateado",
+   "price": 610,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/fotocromatico-03.webp"
+   ],
+   "collections": [
+    "fotocromaticos",
+    "luz-azul"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "negro/plateado"
+   ]
+  },
+  {
+   "id": "lentes-de-sol-01",
+   "name": "Lentes de sol (S01)",
+   "description": "Lentes de sol con protección UV.",
+   "price": 320,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/lentes-de-sol-01.webp"
+   ],
+   "collections": [
+    "lentes-de-sol"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "sol"
+   ]
+  },
+  {
+   "id": "lentes-de-sol-02",
+   "name": "Lentes de sol (S02)",
+   "description": "Lentes de sol con protección UV.",
+   "price": 310,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/lentes-de-sol-02.webp"
+   ],
+   "collections": [
+    "lentes-de-sol"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "sol"
+   ]
+  },
+  {
+   "id": "lentes-de-sol-03",
+   "name": "Lentes de sol (S03)",
+   "description": "Lentes de sol con protección UV.",
+   "price": 280,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/lentes-de-sol-03.webp"
+   ],
+   "collections": [
+    "lentes-de-sol"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "sol"
+   ]
+  },
+  {
+   "id": "lentes-de-sol-04",
+   "name": "Lentes de sol (S04)",
+   "description": "Lentes de sol con protección UV.",
+   "price": 310,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/lentes-de-sol-04.webp"
+   ],
+   "collections": [
+    "lentes-de-sol"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "sol"
+   ]
+  },
+  {
+   "id": "lentes-de-sol-05",
+   "name": "Lentes de sol (S05)",
+   "description": "Lentes de sol con protección UV.",
+   "price": 270,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/lentes-de-sol-05.webp"
+   ],
+   "collections": [
+    "lentes-de-sol"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "sol"
+   ]
+  },
+  {
+   "id": "lentes-de-sol-06",
+   "name": "Lentes de sol (S06)",
+   "description": "Lentes de sol con protección UV.",
+   "price": 190,
+   "comparePrice": 0,
+   "images": [
+    "assets/products/lentes-de-sol-06.webp"
+   ],
+   "collections": [
+    "lentes-de-sol"
+   ],
+   "status": "active",
+   "stock": "",
+   "optionName": "",
+   "options": [],
+   "paymentLink": "",
+   "featured": false,
+   "createdAt": "2026-11-24",
+   "tags": [
+    "sol"
+   ]
+  }
+ ]
+}

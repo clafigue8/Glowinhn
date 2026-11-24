@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Administrar tienda</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+  <link rel="stylesheet" href="admin.css?v=20261124g1">
+</head>
+<body>
+
+  <!-- Inicio de sesión -->
+  <section id="login" class="login">
+    <form class="login-card" id="login-form">
+      <h1>Panel de la tienda</h1>
+      <p class="muted">Conecta el panel con el repositorio de GitHub donde vive la tienda. Los cambios se publican como commits y la página se actualiza en 1–2 minutos.</p>
+      <label>Usuario u organización de GitHub<input name="owner" required placeholder="clafigue8"></label>
+      <label>Repositorio<input name="repo" required placeholder="glowin"></label>
+      <label>Rama<input name="branch" required value="main"></label>
+      <label>Token de acceso (fine-grained)
+        <input name="token" type="password" required autocomplete="off" placeholder="github_pat_…">
+      </label>
+      <label class="check"><input type="checkbox" name="remember"> Recordar en este dispositivo</label>
+      <button class="btn" type="submit">Entrar</button>
+      <p class="error" id="login-error" hidden></p>
+      <details>
+        <summary>¿Cómo obtengo el token?</summary>
+        <ol>
+          <li>En GitHub ve a <b>Settings → Developer settings → Personal access tokens → Fine-grained tokens</b>.</li>
+          <li><b>Generate new token</b>. En “Repository access” elige <b>Only select repositories</b> y selecciona el repositorio de la tienda.</li>
+          <li>En “Permissions → Repository permissions” pon <b>Contents: Read and write</b>.</li>
+          <li>Copia el token y pégalo aquí. Nunca lo compartas.</li>
+        </ol>
+      </details>
+      <button class="link-btn" type="button" id="offline-btn">Probar sin conexión (los cambios se descargan como archivo)</button>
+    </form>
+  </section>
+
+  <!-- Panel -->
+  <section id="panel" hidden>
+    <header class="topbar">
+      <div class="brand"><span id="store-name">Tienda</span> <span class="pill" id="mode-pill"></span></div>
+      <div class="top-actions">
+        <span class="dirty" id="dirty" hidden>● Cambios sin publicar</span>
+        <button class="btn ghost" id="preview-btn">Vista previa</button>
+        <button class="btn" id="publish-btn">Publicar</button>
+        <button class="icon" id="logout-btn" title="Salir">⎋</button>
+      </div>
+    </header>
+
+    <nav class="tabs" id="tabs">
+      <button data-tab="products" class="active">Productos</button>
+      <button data-tab="restock">Por comprar <span class="count" id="restock-count"></span></button>
+      <button data-tab="collections">Colecciones</button>
+      <button data-tab="home">Inicio</button>
+      <button data-tab="design">Diseño y colores</button>
+      <button data-tab="checkout">Carrito y pedidos</button>
+      <button data-tab="backup">Respaldo</button>
+    </nav>
+
+    <main class="content">
+      <!-- Productos -->
+      <div class="tab" id="tab-products">
+        <div class="toolbar">
+          <input type="search" id="p-search" placeholder="Buscar producto…">
+          <select id="p-filter">
+            <option value="all">Todos</option>
+            <option value="active">Activos</option>
+            <option value="draft">Borradores</option>
+            <option value="archived">Archivados</option>
+            <option value="soldout">Agotados</option>
+            <option value="restock">En lista de compras</option>
+          </select>
+          <button class="btn" id="p-new">+ Nuevo producto</button>
+        </div>
+        <div id="p-list" class="list"></div>
+      </div>
+
+      <!-- Lista de compras -->
+      <div class="tab" id="tab-restock" hidden>
+        <div class="toolbar">
+          <p class="muted grow">Productos que tienes que volver a comprar. Los marcados 🔥 aparecen primero. No se muestra en la tienda (pero no anotes datos privados: el repositorio es público).</p>
+          <button class="btn ghost" type="button" id="r-copy">Copiar lista</button>
+        </div>
+        <div id="r-list" class="list"></div>
+        <h2 style="margin:1.6rem 0 .6rem">Agotados que no están en la lista</h2>
+        <div id="r-suggest" class="list"></div>
+      </div>
+
+      <!-- Colecciones -->
+      <div class="tab" id="tab-collections" hidden>
+        <div class="toolbar">
+          <button class="btn ghost" id="c-apply" type="button" style="order:2">Aplicar palabras clave a todos los productos</button>
+          <p class="muted grow">Las colecciones agrupan productos (un producto puede estar en varias). Ordénalas con las flechas.</p>
+          <button class="btn" id="c-new">+ Nueva colección</button>
+        </div>
+        <div id="c-list" class="list"></div>
+      </div>
+
+      <!-- Inicio -->
+      <div class="tab" id="tab-home" hidden>
+        <div class="card form">
+          <div class="row" style="align-items:center">
+            <h2 class="grow">Carrusel de portada</h2>
+            <label style="flex:0 0 auto;min-width:0">Cambia cada
+              <select id="autoplay"><option value="3">3 s</option><option value="5">5 s</option><option value="7">7 s</option><option value="10">10 s</option></select>
+            </label>
+            <button class="btn" type="button" id="slide-new">+ Imagen</button>
+          </div>
+          <p class="muted">Si la imagen ya trae texto (como tus banners), deja el título vacío y solo pon el texto del botón. Ideal: imágenes horizontales 16:9 (por ejemplo 1600×900).</p>
+          <div id="slides-list" class="list"></div>
+        </div>
+        <div class="card form" style="margin-top:1rem">
+          <div class="row" style="align-items:center">
+            <h2 class="grow">Secciones del inicio</h2>
+            <button class="btn" type="button" id="section-new">+ Sección</button>
+          </div>
+          <div class="row" style="align-items:center">
+            <label class="check" style="flex:0 0 auto"><input type="checkbox" id="show-cols"> Mostrar la fila de colecciones</label>
+            <label style="max-width:320px">…hasta la colección (después sale “Catálogo”)<select id="cols-until"></select></label>
+          </div>
+          <p class="muted">Cada sección es una fila de productos que se desliza con el dedo. Debajo siempre aparece “Todos los productos”.</p>
+          <div id="sections-list" class="list"></div>
+        </div>
+      </div>
+
+      <!-- Diseño -->
+      <div class="tab" id="tab-design" hidden>
+        <div class="cols">
+          <form class="card form" id="design-form">
+            <h2>Identidad</h2>
+            <label>Nombre de la tienda<input name="store.name"></label>
+            <label>Lema<input name="store.tagline"></label>
+            <div class="img-field" data-field="store.logo"><span>Logo (opcional, reemplaza el nombre)</span></div>
+            <label>Barra de anuncio (vacío para ocultar)<input name="store.announcement"></label>
+
+            <p class="muted">El carrusel y las secciones de la página de inicio se editan en la pestaña “Inicio”.</p>
+          </form>
+
+          <form class="card form" id="theme-form">
+            <h2>Colores</h2>
+            <div class="presets" id="presets"></div>
+            <div class="color-grid">
+              <label>Principal (botones, precios)<input type="color" name="theme.primary"></label>
+              <label>Secundario (encabezados)<input type="color" name="theme.secondary"></label>
+              <label>Acento<input type="color" name="theme.accent"></label>
+              <label>Fondo<input type="color" name="theme.background"></label>
+              <label>Tarjetas<input type="color" name="theme.surface"></label>
+              <label>Texto<input type="color" name="theme.text"></label>
+            </div>
+            <h2>Tipografía y forma</h2>
+            <label>Letra del texto<select name="theme.font" id="font-select"></select></label>
+            <label>Letra de títulos<select name="theme.headingFont" id="heading-select"></select></label>
+            <label><span>Redondeo de esquinas: <output id="radius-out"></output> px</span><input type="range" min="0" max="28" name="theme.radius"></label>
+            <div class="swatch-preview" id="swatch-preview">
+              <div class="sp-title">Así se verá</div>
+              <div class="sp-card"><div class="sp-img"></div><div class="sp-name">Producto</div><div class="sp-price">$449.00</div></div>
+              <span class="sp-btn">Agregar al carrito</span>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Carrito -->
+      <div class="tab" id="tab-checkout" hidden>
+        <form class="card form narrow" id="checkout-form">
+          <h2>Cómo te llegan los pedidos</h2>
+          <p class="muted">Cuando un cliente finaliza su carrito, se le abre WhatsApp o su correo con el pedido completo listo para enviarte.</p>
+          <fieldset class="restock-box">
+            <legend><b>Pedidos a tu correo (botón “Agendar pedido”)</b></legend>
+            <p class="muted" style="font-size:.85rem">La clienta toca el botón y el pedido te llega al correo (con notificación en tu celular si tienes la app de Gmail). Necesita una clave gratuita de <b>Web3Forms</b>:</p>
+            <ol class="muted" style="font-size:.85rem;margin:.2rem 0;padding-left:1.2rem">
+              <li>Entra a <a href="https://web3forms.com" target="_blank" rel="noopener">web3forms.com</a> y escribe el correo donde quieres recibir los pedidos.</li>
+              <li>Te llega un correo con tu <b>Access Key</b>. Cópiala y pégala aquí.</li>
+            </ol>
+            <div class="row">
+              <label class="grow">Access Key de Web3Forms<input name="store.orderKey" placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" autocomplete="off"></label>
+              <button class="btn ghost" type="button" id="order-test">Enviar pedido de prueba</button>
+            </div>
+            <label>Texto del botón<input name="store.orderButton" placeholder="Agendar pedido"></label>
+            <div class="row">
+              <label>Inicio del número de pedido<input name="store.orderPrefix" placeholder="S&amp;P💗"></label>
+              <label>Los pedidos cuentan desde<input name="store.orderStart" type="number" min="0" step="1" placeholder="20000"></label>
+            </div>
+            <p class="muted" style="font-size:.8rem">Con 20000, el primer pedido será S&amp;P💗20001, luego 20002… Si el contador no responde, el pedido igual se envía con un código que empieza con “W”.</p>
+            <p class="muted" style="font-size:.8rem">Sin clave, el botón vuelve a ser “Enviar pedido por WhatsApp”.</p>
+          </fieldset>
+          <label>WhatsApp (con código de país, ej. 50499999999)<input name="store.whatsapp" inputmode="tel"></label>
+          <label>Correo para pedidos<input name="store.email" type="email"></label>
+          <label>Instagram (usuario)<input name="store.instagram" placeholder="@glowinhn"></label>
+          <h2>Envío y moneda</h2>
+          <div class="row" style="align-items:center">
+            <span class="grow label">Formas de entrega (la clienta elige una en el carrito)</span>
+            <button class="btn ghost sm" type="button" id="ship-new">+ Agregar</button>
+          </div>
+          <div id="ship-list" class="list"></div>
+          <fieldset class="restock-box" id="promo-box">
+            <legend><label class="check"><input type="checkbox" id="promo-on"> 🎁 Descuento automático en el carrito</label></legend>
+            <div class="row">
+              <label style="max-width:130px">Porcentaje<input name="store.promo.percent" type="number" min="1" max="90" step="1" placeholder="20"></label>
+              <label class="grow">Nombre del descuento<input name="store.promo.label" placeholder="Primera compra en línea"></label>
+            </div>
+            <label class="check"><input type="checkbox" id="promo-first"> Solo en la primera compra (se reconoce por el celular o computadora de la clienta)</label>
+          </fieldset>
+          <div class="row" style="align-items:center">
+            <span class="grow label">Formas de pago (la clienta elige una al finalizar)</span>
+            <button class="btn ghost sm" type="button" id="pay-new">+ Agregar</button>
+          </div>
+          <div id="pay-list" class="list"></div>
+          <label>Envío gratis si la compra llega a (0 = nunca)<input name="store.freeShippingOver" type="number" min="0" step="0.01"></label>
+          <div class="row">
+            <label>Moneda
+              <select name="store.currency">
+                <option value="HNL">HNL — Lempira</option>
+                <option value="MXN">MXN — Peso mexicano</option>
+                <option value="USD">USD — Dólar</option>
+                <option value="EUR">EUR — Euro</option>
+                <option value="COP">COP — Peso colombiano</option>
+                <option value="ARS">ARS — Peso argentino</option>
+                <option value="CLP">CLP — Peso chileno</option>
+                <option value="PEN">PEN — Sol</option>
+                <option value="GTQ">GTQ — Quetzal</option>
+                <option value="DOP">DOP — Peso dominicano</option>
+              </select>
+            </label>
+            <label>Formato regional
+              <select name="store.locale">
+                <option value="es-HN">Honduras</option>
+                <option value="es-MX">México</option>
+                <option value="es-US">Estados Unidos (español)</option>
+                <option value="es-ES">España</option>
+                <option value="es-CO">Colombia</option>
+                <option value="es-AR">Argentina</option>
+                <option value="es-CL">Chile</option>
+                <option value="es-PE">Perú</option>
+              </select>
+            </label>
+          </div>
+          <label>Mensaje al finalizar compra<textarea name="store.checkoutNote" rows="3"></textarea></label>
+        </form>
+      </div>
+
+      <!-- Respaldo -->
+      <div class="tab" id="tab-backup" hidden>
+        <div class="card form narrow">
+          <h2>Respaldo</h2>
+          <p class="muted">Descarga todo el catálogo y la configuración en un archivo, o restaura uno anterior. Restaurar no publica nada hasta que presiones “Publicar”.</p>
+          <div class="row">
+            <button class="btn ghost" id="export-btn" type="button">Descargar respaldo</button>
+            <label class="btn ghost file-btn">Restaurar desde archivo<input type="file" id="import-file" accept="application/json" hidden></label>
+          </div>
+          <button class="btn ghost" id="reload-btn" type="button">Descartar cambios y recargar lo publicado</button>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- Editor de producto -->
+  <dialog id="p-dialog">
+    <form method="dialog" class="form" id="p-form">
+      <div class="dlg-head"><h2 id="p-title">Producto</h2><button class="icon" value="cancel" formnovalidate>✕</button></div>
+      <label>Nombre<input name="name" required></label>
+      <label>Descripción<textarea name="description" rows="4"></textarea></label>
+      <div class="row">
+        <label>Precio<input name="price" type="number" min="0" step="0.01" required></label>
+        <label>Precio antes (tachado)<input name="comparePrice" type="number" min="0" step="0.01"></label>
+        <label>Inventario (vacío = ilimitado)<input name="stock" type="number" min="0" step="1"></label>
+      </div>
+      <div class="row">
+        <button class="btn ghost sm" type="button" id="p-soldout">Marcar agotado (inventario 0)</button>
+        <span class="muted" style="font-size:.82rem">Agotado = se ve en la tienda pero no se puede comprar.</span>
+      </div>
+      <div>
+        <div class="label">Fotos</div>
+        <div class="images" id="p-images"></div>
+        <div class="row">
+          <label class="btn ghost file-btn">Subir fotos<input type="file" id="p-upload" accept="image/*" multiple hidden></label>
+          <button class="btn ghost" type="button" id="p-add-url">Agregar por URL</button>
+        </div>
+      </div>
+      <div>
+        <div class="label">Colecciones</div>
+        <div class="checks" id="p-collections"></div>
+        <p class="muted" style="font-size:.8rem;margin-top:.3rem" id="p-auto-hint"></p>
+      </div>
+      <div class="row">
+        <label>Nombre de la opción<input name="optionName" placeholder="Talla, Color…"></label>
+        <label class="grow">Valores (separados por coma)<input name="options" placeholder="CH, M, G"></label>
+      </div>
+      <fieldset class="restock-box">
+        <legend><label class="check"><input type="checkbox" name="restock"> 🛒 Agregar a la lista de compras por hacer</label></legend>
+        <div class="row">
+          <label style="max-width:140px">Cantidad a comprar<input name="restockQty" type="number" min="0" step="1" placeholder="Ej. 10"></label>
+          <label class="grow">Nota (proveedor, link, color…)<input name="restockNote" placeholder="Ej. Shein, pedir en negro y plateado"></label>
+          <label class="check" style="flex:0 0 auto"><input type="checkbox" name="trending"> 🔥 Es tendencia</label>
+        </div>
+      </fieldset>
+      <label>Etiquetas / palabras clave (separadas por coma, ayudan a la búsqueda)<input name="tags" placeholder="kuromi, y2k, plata"></label>
+      <label>Enlace de pago directo (opcional: Stripe, PayPal, Mercado Pago…)<input name="paymentLink" type="url" placeholder="https://"></label>
+      <div class="row">
+        <label>Estado
+          <select name="status">
+            <option value="active">Activo (visible)</option>
+            <option value="draft">Borrador (oculto)</option>
+            <option value="archived">Archivado (oculto)</option>
+          </select>
+        </label>
+        <label class="check"><input type="checkbox" name="featured"> Destacado</label>
+      </div>
+      <div class="dlg-foot">
+        <button class="btn danger ghost" type="button" id="p-delete">Borrar</button>
+        <span class="grow"></span>
+        <button class="btn ghost" value="cancel" formnovalidate>Cancelar</button>
+        <button class="btn" value="save">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Editor de colección -->
+  <dialog id="c-dialog">
+    <form method="dialog" class="form" id="c-form">
+      <div class="dlg-head"><h2 id="c-title">Colección</h2><button class="icon" value="cancel" formnovalidate>✕</button></div>
+      <label>Nombre<input name="name" required></label>
+      <label>Descripción<textarea name="description" rows="2"></textarea></label>
+      <label>Palabras clave (separadas por coma)
+        <input name="keywords" placeholder="anillo, sortija">
+        <span class="muted" style="font-weight:400;font-size:.8rem">Al crear un producto cuyo nombre, descripción o etiquetas tengan una de estas palabras, se marca solo en esta colección.</span>
+      </label>
+      <div>
+        <div class="label">Portada</div>
+        <div class="img-row" id="c-image"></div>
+        <p class="muted" style="font-size:.82rem">Si no tiene portada se usa la foto del primer producto.</p>
+      </div>
+      <label class="check"><input type="checkbox" name="visible"> Mostrar en la tienda</label>
+      <div>
+        <div class="label">Productos de esta colección <span class="muted" id="c-count" style="font-weight:400"></span></div>
+        <p class="muted" style="font-size:.8rem;margin:.2rem 0 .4rem">Marca o desmarca a mano. Si desmarcas uno que entró por palabra clave, ya no se vuelve a agregar solo.</p>
+        <div class="row" style="margin-bottom:.4rem">
+          <input id="c-psearch" type="search" placeholder="Buscar producto…" style="flex:1">
+          <select id="c-pfilter" style="width:auto"><option value="in">En la colección</option><option value="all">Todos</option><option value="out">No están</option></select>
+        </div>
+        <div id="c-products" class="pick-list"></div>
+      </div>
+      <div class="dlg-foot">
+        <span class="grow"></span>
+        <button class="btn ghost" value="cancel" formnovalidate>Cancelar</button>
+        <button class="btn" value="save">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" hidden></div>
+  <script src="admin.js?v=20261124g1"></script>
+</body>
+</html>
