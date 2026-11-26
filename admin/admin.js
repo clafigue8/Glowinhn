@@ -19,7 +19,7 @@
   let baseSha = null;    // sha del store.json que cargamos
   const localImages = new Map(); // ruta → objectURL mientras GitHub Pages despliega
 
-  const FONTS = ["Montserrat", "Cormorant Garamond", "Great Vibes", "Poppins", "Inter", "Montserrat", "Nunito", "Quicksand", "DM Sans", "Work Sans", "Lora",
+  const FONTS = ["Montserrat", "Cormorant Garamond", "Great Vibes", "Poppins", "Inter", "Nunito", "Quicksand", "DM Sans", "Work Sans", "Lora",
     "Playfair Display", "Rubik Mono One", "Bebas Neue", "Righteous", "Pacifico", "Creepster", "Fredoka",
     "Space Grotesk", "Abril Fatface", "Permanent Marker"];
 
