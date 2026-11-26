@@ -131,7 +131,9 @@
    "image": "assets/slides/chica-lentes.webp",
    "text": "Click para ver más lentes",
    "link": "#/todo"
-  }
+  },
+  "showReviews": true,
+  "reviewsTitle": "Lo que dicen nuestras clientas ✦"
  },
  "collections": [
   {
@@ -1072,5 +1074,6 @@
     "sol"
    ]
   }
- ]
+ ],
+ "reviews": []
 }
