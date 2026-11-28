@@ -61,7 +61,11 @@
    "percent": 20,
    "label": "Primera compra en línea",
    "firstOrderOnly": true
-  }
+  },
+  "siteUrl": "https://clafigue8.github.io/Glowinhn/",
+  "seoTitle": "Glowin | Lentes con protección de luz azul y UV en Honduras",
+  "seoDescription": "Lentes con filtro de luz azul y UV, fotocromáticos y de sol. Envíos a todo Honduras desde Tegucigalpa.",
+  "city": "Tegucigalpa"
  },
  "theme": {
   "primary": "#8a5a3b",
